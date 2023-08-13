@@ -191,37 +191,212 @@
 </section>
 
 <section class="section" id="NLU_results">
-  <table class="result-table">
-    <caption>Summary of results for NLU tasks. †: MIMIC-CXR (in domain), ‡: CheXpert (out of domain), §: RadGraph <a href="jain2021radgraph">RadGraph</a>, RadSpRL <a href="datta2020understanding">RadSpRL</a>, Stanza <a href="zhang2021stanza">Stanza</a></caption>
-    <thead>
-      <tr>
-        <th>Model</th>
-        <th>RG<sub>NER</sub>†</th>
-        <th>RG<sub>NER</sub>‡</th>
-        <th>RG<sub>RE</sub>†</th>
-        <th>RG<sub>RE</sub>‡</th>
-        <th>RadSpRL</th>
-        <th>Stanza</th>
-        <th>Procedure</th>
-        <th>NLU Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>BERT<sub>base</sub></td>
-        <td>93.0</td>
-        <td>86.3</td>
-        <td>82.7</td>
-        <td>70.6</td>
-        <td>91.2</td>
-        <td>83.7</td>
-        <td>65.4</td>
-        <td>81.8</td>
-      </tr>
-      <!-- Add more rows for other models here -->
-      <!-- Add the last two rows as well -->
-    </tbody>
-  </table>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">NLU Leaderboard</h2>
+    </div>
+      <div class="table-container">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>RG<sub>NER</sub>†</th>
+              <th>RG<sub>NER</sub>‡</th>
+              <th>RG<sub>RE</sub>†</th>
+              <th>RG<sub>RE</sub>‡</th>
+              <th>RadSpRL</th>
+              <th>Stanza</th>
+              <th>Procedure</th>
+              <th>NLU Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BERT<sub>base</sub></td>
+              <td>93.0</td>
+              <td>86.3</td>
+              <td>82.7</td>
+              <td>70.6</td>
+              <td>91.2</td>
+              <td>83.7</td>
+              <td>65.4</td>
+              <td>81.8</td>
+            </tr>
+            <tr>
+              <td>BERT<sub>large</sub></td>
+              <td>92.6</td>
+              <td>88.5</td>
+              <td>82.0</td>
+              <td>71.4</td>
+              <td>85.3</td>
+              <td>85.4</td>
+              <td>64.9</td>
+              <td>81.4</td>
+            </tr>
+            <tr>
+              <td>RoBERTa<sub>base</sub></td>
+              <td>92.4</td>
+              <td>89.7</td>
+              <td>81.3</td>
+              <td>70.2</td>
+              <td>89.6</td>
+              <td>81.5</td>
+              <td>64.2</td>
+              <td>81.3</td>
+            </tr>
+            <tr>
+              <td>RoBERTa<sub>large</sub></td>
+              <td>92.7</td>
+              <td>89.7</td>
+              <td>83.0</td>
+              <td>73.1</td>
+              <td>82.1</td>
+              <td>83.0</td>
+              <td>64.9</td>
+              <td>81.2</td>
+            </tr>
+            <tr>
+              <td>ELECTRA<sub>small</sub></td>
+              <td>92.6</td>
+              <td>89.7</td>
+              <td>82.0</td>
+              <td>70.7</td>
+              <td>88.1</td>
+              <td>73.1</td>
+              <td>61.5</td>
+              <td>79.7</td>
+            </tr>
+            <tr>
+              <td>ELECTRA<sub>base</sub></td>
+              <td>93.2</td>
+              <td>85.9</td>
+              <td>83.2</td>
+              <td>71.9</td>
+              <td>89.9</td>
+              <td>85.2</td>
+              <td>64.4</td>
+              <td>82.0</td>
+            </tr>
+            <tr>
+              <td>ELECTRA<sub>large</sub></td>
+              <td>93.0</td>
+              <td>86.0</td>
+              <td>82.3</td>
+              <td>71.0</td>
+              <td>87.5</td>
+              <td>84.9</td>
+              <td>64.2</td>
+              <td>81.3</td>
+            </tr>
+            <tr>
+              <td>DeBERTa-V3<sub>base</sub></td>
+              <td>93.4</td>
+              <td>89.8</td>
+              <td><strong>84.6</strong></td>
+              <td>73.4</td>
+              <td>89.8</td>
+              <td>84.1</td>
+              <td>65.7</td>
+              <td>83.0</td>
+            </tr>
+            <tr>
+              <td>DeBERTa-V3<sub>large</sub></td>
+              <td>93.1</td>
+              <td>89.9</td>
+              <td>83.8</td>
+              <td>73.4</td>
+              <td>89.4</td>
+              <td>85.1</td>
+              <td>64.2</td>
+              <td>82.7</td>
+            </tr>
+            <tr>
+              <td>PubMedBERT</td>
+              <td>92.1</td>
+              <td>86.8</td>
+              <td>82.9</td>
+              <td>71.7</td>
+              <td>88.9</td>
+              <td>85.0</td>
+              <td>65.9</td>
+              <td>81.9</td>
+            </tr>
+            <tr>
+              <td>BioLinkBERT<sub>base</sub></td>
+              <td>93.2</td>
+              <td>90.6</td>
+              <td>83.6</td>
+              <td><strong>75.1</strong></td>
+              <td>91.0</td>
+              <td>83.7</td>
+              <td>65.7</td>
+              <td>83.3</td>
+            </tr>
+            <tr>
+              <td>BioLinkBERT<sub>large</sub></td>
+              <td>93.2</td>
+              <td>90.3</td>
+              <td>82.6</td>
+              <td>72.4</td>
+              <td>89.6</td>
+              <td>84.6</td>
+              <td>65.7</td>
+              <td>82.6</td>
+            </tr>
+            <tr>
+              <td>BioClinicalBERT</td>
+              <td>93.7</td>
+              <td>90.4</td>
+              <td>82.0</td>
+              <td>72.8</td>
+              <td>91.9</td>
+              <td><strong>85.6</strong></td>
+              <td>65.4</td>
+              <td>83.1</td>
+            </tr>
+            <tr>
+              <td>GatorTron</td>
+              <td>93.5</td>
+              <td>89.8</td>
+              <td>82.9</td>
+              <td>74.6</td>
+              <td><strong>92.0</strong></td>
+              <td>84.3</td>
+              <td><strong>66.7</strong></td>
+              <td><strong>83.4</strong></td>
+            </tr>
+            <tr>
+              <td>RadBERT<sub>1</sub></td>
+              <td>93.8</td>
+              <td>90.1</td>
+              <td>81.2</td>
+              <td>72.1</td>
+              <td>91.2</td>
+              <td>85.1</td>
+              <td>65.4</td>
+              <td>82.7</td>
+            </tr>
+            <tr>
+              <td>RadBERT<sub>2</sub></td>
+              <td><strong>94.0</strong></td>
+              <td><strong>90.7</strong></td>
+              <td>81.9</td>
+              <td>73.4</td>
+              <td>91.2</td>
+              <td>85.5</td>
+              <td>65.8</td>
+              <td>83.2</td>
+            </tr>
+            <!-- Add more rows for other models here -->
+            <!-- Add the last two rows as well -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-caption">
+        <p> †: MIMIC-CXR (in domain), ‡: CheXpert (out of domain), §: RadGraph <a href="jain2021radgraph">RadGraph</a>, RadSpRL <a href="datta2020understanding">RadSpRL</a>, Stanza <a href="zhang2021stanza">Stanza</a></p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="BibTeX">
@@ -255,8 +430,9 @@
           </p>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
+  
 </footer>
 
 </body>
