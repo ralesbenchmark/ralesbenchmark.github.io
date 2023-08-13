@@ -26,17 +26,21 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/tablesorter.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.min.js"></script>
+
 </head>
 <body>
 
@@ -50,12 +54,24 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://jmzam.github.io">
+      <a class="navbar-item" href="https://ralesbenchmark.github.io">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
       </a>
-
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Leaderboard
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="#NLU_results">
+            RaLEs NLU
+          </a>
+          <a class="navbar-item" href="#NLG_results">
+            RaLEs NLG
+          </a>
+        </div>
+      </div>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More Research
@@ -196,18 +212,18 @@
     <h2 class="title is-3">NLU Leaderboard</h2>
     </div>
       <div class="table-container">
-        <table class="result-table">
+        <table class="result-table tablesorter">
           <thead>
             <tr>
-              <th>Model</th>
-              <th>RG<sub>NER</sub>†</th>
-              <th>RG<sub>NER</sub>‡</th>
-              <th>RG<sub>RE</sub>†</th>
-              <th>RG<sub>RE</sub>‡</th>
-              <th>RadSpRL</th>
-              <th>Stanza</th>
-              <th>Procedure</th>
-              <th>NLU Score</th>
+              <th class="sortable-header">Model</th>
+              <th class="sortable-header">RG<sub>NER</sub>†</th>
+              <th class="sortable-header">RG<sub>NER</sub>‡</th>
+              <th class="sortable-header">RG<sub>RE</sub>†</th>
+              <th class="sortable-header">RG<sub>RE</sub>‡</th>
+              <th class="sortable-header">RadSpRL</th>
+              <th class="sortable-header">Stanza</th>
+              <th class="sortable-header">Procedure</th>
+              <th class="sortable-header">NLU Score</th>
             </tr>
           </thead>
           <tbody>
@@ -393,11 +409,104 @@
         </table>
       </div>
       <div class="table-caption">
-        <p> †: MIMIC-CXR (in domain), ‡: CheXpert (out of domain), §: RadGraph <a href="jain2021radgraph">RadGraph</a>, RadSpRL <a href="datta2020understanding">RadSpRL</a>, Stanza <a href="zhang2021stanza">Stanza</a></p>
+        <p> †: MIMIC-CXR (in domain), ‡: CheXpert (out of domain), NER: named entity recognition, RE: relation extraction</a></p>
+        <!-- §: RadGraph, RadSpRL <a href="datta2020understanding">RadSpRL</a>, Stanza <a href="zhang2021stanza">Stanza -->
       </div>
     </div>
   </div>
 </section>
+
+<section class="section" id="NLG_results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">NLG Leaderboard</h2>
+    </div>
+      <div class="table-container">
+        <table class="result-table tablesorter hover-hightlight">
+          <colgroup>
+            <col span="1" style="width: 10%;">
+            <col span="4" style="width: 20%;">
+            <col span="4" style="width: 20%;">
+            <col span="1" style="width: 10%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th rowspan="2">Model</th>
+              <th class="no-sort" colspan="4">MEDIQA 2021</td>
+              <th class="no-sort" colspan="4">BioNLP 2023</td>
+              <th rowspan="2">NLG Score</th>
+            </tr>
+            <tr>
+              <th>R-2</th>
+              <th>R-L</th>
+              <th>CheXbert</th>
+              <th>RG</th>
+              <th>R-2</th>
+              <th>R-L</th>
+              <th>CheXbert</th>
+              <th>RG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ELECTRA<sub>base</sub></td>
+              <td>.238</td>
+              <td>.381</td>
+              <td>.710</td>
+              <td>.378</td>
+              <td>.156</td>
+              <td>.274</td>
+              <td>.441</td>
+              <td>.229</td>
+              <td>.316</td>
+            </tr>
+            <tr>
+              <td>BioLinkBERT<sub>base</sub></td>
+              <td>.245</td>
+              <td><b>.388</b></td>
+              <td><b>.725</b></td>
+              <td>.391</td>
+              <td>.183</td>
+              <td>.297</td>
+              <td>.500</td>
+              <td>.272</td>
+              <td>.337</td>
+            </tr>
+            <tr>
+              <td>GatorTron</td>
+              <td><b>.250</b></td>
+              <td>.386</td>
+              <td>.719</td>
+              <td><b>.406</b></td>
+              <td><b>.189</b></td>
+              <td><b>.303</b></td>
+              <td><b>.506</b></td>
+              <td><b>.283</b></td>
+              <td><b>.345</b></td>
+            </tr>
+            <tr>
+              <td>RadBERT<sub>2</sub></td>
+              <td>.237</td>
+              <td>.382</td>
+              <td>.709</td>
+              <td>.381</td>
+              <td>.184</td>
+              <td>.300</td>
+              <td>.487</td>
+              <td>.271</td>
+              <td>.334</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-caption">
+      R-2: ROUGE-2, R-L: ROUGE-L, CheXbert: CheXbert score, RG: F1 RadGraph score
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">

@@ -160,10 +160,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust this value as needed */
+  overflow: auto; /* Adjust this value as needed */
 }
 .result-table {
-  width: 90%;
+  width: 100%;
   overflow-x: auto;
   border-collapse: collapse;
   border: 1px solid #ddd;
@@ -177,18 +177,25 @@ body {
 .result-table th, .result-table td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
+.result-table thead, .result-table th {
+  background-color: #1e4d6e; 
+  color: white; 
+  font-weight: bold;
+  text-align: center;
+} */
 .result-table th {
-  background-color: #f2f2f2;
+  background-color: #1e4d6e; 
+  color: white; 
   font-weight: bold;
 }
 
-/* Style for alternating row colors */
+/* Style for alternating row colors
 .result-table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
-}
+} */
 
 /* Style for superscript */
 .result-table sup {
@@ -206,21 +213,6 @@ body {
   text-decoration: underline;
 }
 
-
-.sort-button {
-  cursor: pointer;
-  user-select: none;
-}
-.sort-button:after {
-  content: '\25b2';
-  padding-left: 5px;
-}
-.sort-button.asc:after {
-  content: '\25b2';
-}
-.sort-button.desc:after {
-  content: '\25bc';
-}
 .table-caption {
   margin-top: -10px;
   text-align: center;
