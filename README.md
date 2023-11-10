@@ -4,11 +4,12 @@ This is the repository that contains source code for the [RaLEs Benchmark websit
 
 If you find RaLEs useful for your work please cite:
 ```
-@article{zambranochaves2023rales
+@inproceedings{zambranochaves2023rales,
   author    = {Zambrano Chaves, Juan Manuel and Bhaskhar, Nandita and Attias, Maayane and Delbrouck, Jean-Benoit and Rubin, Daniel and Loening, Andreas Markus and Langlotz, Curtis and Chaudhari, Akshay S},
   title     = {RaLEs: a Benchmark for Radiology Language Evaluations},
-  journal   = {},
-  year      = {2023},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume = {36},
+  year = {2023}
 }
 ```
 
